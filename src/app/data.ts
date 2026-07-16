@@ -52,6 +52,35 @@ export type TeamDepartment = {
   members: TeamMember[];
 };
 
+export type Speaker = {
+  name: string;
+  role: string;
+  topic: string;
+  event: string;
+};
+
+// Real speakers only — add here as more sessions happen. Photos/LinkedIn can be added once available.
+export const speakers: Speaker[] = [
+  {
+    name: 'Nitin Pandit',
+    role: 'Microsoft MVP',
+    topic: 'Career guidance session',
+    event: 'Ctrl + Future'
+  },
+  {
+    name: 'Arun Chaudhary',
+    role: 'Cybersecurity & OSINT Expert',
+    topic: 'OSINT and cybersecurity',
+    event: 'Ctrl + Future'
+  },
+  {
+    name: 'Sarvesh Shashi Kumar',
+    role: 'AI Agents Speaker',
+    topic: 'Building with AI agents',
+    event: 'Ctrl + Future'
+  }
+];
+
 const driveImage = (fileId: string) => `https://drive.google.com/uc?export=view&id=${fileId}`;
 
 export const techVrikshLogoUrl = driveImage('1KqtKhx-YZYuSgGKITtBPJzEg6MbD73_j');
