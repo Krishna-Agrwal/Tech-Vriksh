@@ -1,0 +1,8 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="820" rx="48" fill="#111111"/>
+<rect x="80" y="80" width="1240" height="660" rx="36" fill="#141819" stroke="rgba(249,163,200,0.16)"/>
+<path d="M220 610C320 470 410 420 520 420C630 420 720 470 820 350C920 230 1040 220 1180 300" stroke="#F9A3C8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M170 520H1230" stroke="#6BEFD7" stroke-width="3" stroke-dasharray="10 14" stroke-opacity="0.65"/>
+<text x="130" y="660" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700">Pre-Hackathon Series</text>
+<text x="132" y="716" fill="#B9BFC2" font-family="JetBrains Mono, monospace" font-size="24">sample prep series banner</text>
+</svg>

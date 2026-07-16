@@ -1,0 +1,10 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" rx="44" fill="#111111"/>
+<rect x="70" y="70" width="1060" height="660" rx="32" fill="#141819" stroke="rgba(107,239,215,0.18)"/>
+<path d="M150 560L300 420L450 470L600 300L750 360L900 240L1050 280" stroke="#6BEFD7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="300" cy="420" r="18" fill="#6BEFD7" fill-opacity="0.2" stroke="#6BEFD7" stroke-width="4"/>
+<circle cx="600" cy="300" r="18" fill="#F9A3C8" fill-opacity="0.18" stroke="#F9A3C8" stroke-width="4"/>
+<circle cx="900" cy="240" r="18" fill="#6BEFD7" fill-opacity="0.2" stroke="#6BEFD7" stroke-width="4"/>
+<text x="132" y="660" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">Workshop Session</text>
+<text x="132" y="705" fill="#B9BFC2" font-family="JetBrains Mono, monospace" font-size="22">sample event cover image</text>
+</svg>

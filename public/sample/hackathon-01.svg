@@ -1,0 +1,11 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="820" rx="48" fill="#111111"/>
+<rect x="80" y="80" width="1240" height="660" rx="36" fill="#141819" stroke="rgba(107,239,215,0.18)"/>
+<path d="M170 560L320 440L470 500L620 350L770 420L920 300L1070 360L1230 250" stroke="#6BEFD7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M170 250H1230" stroke="#F9A3C8" stroke-width="2" stroke-dasharray="8 12" stroke-opacity="0.75"/>
+<circle cx="320" cy="440" r="18" fill="#6BEFD7" fill-opacity="0.2" stroke="#6BEFD7" stroke-width="4"/>
+<circle cx="620" cy="350" r="18" fill="#F9A3C8" fill-opacity="0.18" stroke="#F9A3C8" stroke-width="4"/>
+<circle cx="1070" cy="360" r="18" fill="#6BEFD7" fill-opacity="0.2" stroke="#6BEFD7" stroke-width="4"/>
+<text x="130" y="660" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="700">HackVriksh</text>
+<text x="132" y="718" fill="#B9BFC2" font-family="JetBrains Mono, monospace" font-size="24">sample hackathon banner</text>
+</svg>

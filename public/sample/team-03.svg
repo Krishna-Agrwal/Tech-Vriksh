@@ -1,0 +1,8 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="900" height="900" rx="40" fill="#111111"/>
+<rect x="70" y="70" width="760" height="760" rx="34" fill="#141819" stroke="rgba(107,239,215,0.18)"/>
+<path d="M260 610L340 470L450 540L560 410L650 500" stroke="#6BEFD7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="340" cy="470" r="16" fill="#6BEFD7" fill-opacity="0.2" stroke="#6BEFD7" stroke-width="4"/>
+<circle cx="560" cy="410" r="16" fill="#F9A3C8" fill-opacity="0.18" stroke="#F9A3C8" stroke-width="4"/>
+<text x="134" y="780" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">Design Ops</text>
+</svg>

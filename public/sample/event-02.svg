@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" rx="44" fill="#111111"/>
+<rect x="70" y="70" width="1060" height="660" rx="32" fill="#141819" stroke="rgba(249,163,200,0.16)"/>
+<path d="M150 220H1050" stroke="#6BEFD7" stroke-width="3" stroke-dasharray="8 12"/>
+<path d="M150 400H1050" stroke="#F9A3C8" stroke-width="3" stroke-dasharray="8 12"/>
+<path d="M150 580H1050" stroke="#6BEFD7" stroke-width="3" stroke-dasharray="8 12"/>
+<path d="M210 220V580" stroke="#6BEFD7" stroke-opacity="0.28" stroke-width="2"/>
+<path d="M420 220V580" stroke="#6BEFD7" stroke-opacity="0.28" stroke-width="2"/>
+<path d="M630 220V580" stroke="#F9A3C8" stroke-opacity="0.28" stroke-width="2"/>
+<path d="M840 220V580" stroke="#6BEFD7" stroke-opacity="0.28" stroke-width="2"/>
+<text x="132" y="660" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">Offline Talk Track</text>
+<text x="132" y="705" fill="#B9BFC2" font-family="JetBrains Mono, monospace" font-size="22">sample event cover image</text>
+</svg>

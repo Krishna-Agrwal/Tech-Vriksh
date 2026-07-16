@@ -1,0 +1,16 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="900" rx="48" fill="#111111"/>
+<rect x="80" y="80" width="1040" height="740" rx="40" fill="#141819" stroke="rgba(107,239,215,0.18)"/>
+<path d="M220 220V680" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M320 190V710" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M420 240V650" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M520 180V720" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M620 230V660" stroke="#F9A3C8" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M720 170V700" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M820 250V640" stroke="#F9A3C8" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M920 200V680" stroke="#6BEFD7" stroke-opacity="0.22" stroke-width="2"/>
+<path d="M170 340H1030" stroke="#6BEFD7" stroke-width="3" stroke-linecap="round"/>
+<path d="M170 540H1030" stroke="#F9A3C8" stroke-width="3" stroke-linecap="round"/>
+<text x="132" y="755" fill="#FEFFF9" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700">Branching Network</text>
+<text x="134" y="804" fill="#B9BFC2" font-family="JetBrains Mono, monospace" font-size="24">sample community gallery image</text>
+</svg>
