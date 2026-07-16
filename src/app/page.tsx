@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
 import { Counter } from '@/components/counter';
 import { ParallaxLayer } from '@/components/parallax-layer';
+import { InstagramEmbed } from '@/components/instagram-embed';
 import { communityGalleryPhotos, events, hackathons, speakers, type Speaker } from './data';
 
 function getUpcomingEvent() {
@@ -242,6 +243,21 @@ export default function HomePage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* 2025 recap — the year-in-review video, pulled straight from Instagram */}
+      <Reveal className="mt-14">
+        <div className="tv-card rounded-[1.8rem] p-6 sm:p-7">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">2025 recap</div>
+              <h2 className="tv-heading mt-2 text-3xl tracking-[-0.04em]">A year of Tech Vriksh, in one video</h2>
+            </div>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <InstagramEmbed url="https://www.instagram.com/p/DS6c5UpEkm_/" caption="Tech Vriksh 2025 year-in-review video" />
           </div>
         </div>
       </Reveal>
