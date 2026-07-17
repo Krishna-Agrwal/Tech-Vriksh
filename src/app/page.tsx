@@ -31,13 +31,39 @@ function StatCard({
   );
 }
 
+function getInitials(name: string) {
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+}
+
 function SpeakerCard({ speaker }: { speaker: Speaker }) {
   return (
     <div className="tv-card rounded-[1.4rem] border border-white/10 p-5 sm:p-6">
-      <div className="tv-mono text-[0.68rem] uppercase tracking-[0.24em] text-[color:var(--tv-cyan)]">{speaker.event}</div>
-      <h3 className="tv-heading mt-2 text-xl tracking-[-0.03em]">{speaker.name}</h3>
-      <div className="mt-1 text-sm text-[color:var(--tv-magenta)]">{speaker.role}</div>
-      <p className="mt-3 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{speaker.topic}</p>
+      <div className="flex items-center gap-4">
+        {speaker.image ? (
+          <Image
+            src={speaker.image}
+            alt={speaker.name}
+            width={56}
+            height={56}
+            className="h-14 w-14 shrink-0 rounded-full border border-white/10 object-cover"
+          />
+        ) : (
+          <div className="tv-heading flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-[color:var(--tv-cyan)]">
+            {getInitials(speaker.name)}
+          </div>
+        )}
+        <div>
+          <h3 className="tv-heading text-xl tracking-[-0.03em]">{speaker.name}</h3>
+          <div className="mt-1 text-sm text-[color:var(--tv-magenta)]">{speaker.role}</div>
+        </div>
+      </div>
+      <p className="mt-4 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{speaker.topic}</p>
     </div>
   );
 }
@@ -103,41 +129,36 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="tv-card tv-card-cyan rounded-[2rem] p-5 sm:p-6">
-          <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">At a glance</div>
-          <div className="mt-5 space-y-4 border-l border-white/10 pl-4 sm:pl-5">
-            <div>
-              <div className="tv-mono text-sm uppercase tracking-[0.24em] text-[color:var(--tv-cyan)]">{featuredStatusLabel}</div>
-              <div className="tv-heading mt-2 text-2xl leading-tight">{highlightEvent.title}</div>
-              <p className="mt-2 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{highlightEvent.description}</p>
+        <div className="space-y-5">
+          <div className="tv-card rounded-[2rem] p-5 sm:p-6">
+            <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">2025 recap</div>
+            <div className="tv-heading mt-2 text-xl leading-tight">A year of Tech Vriksh, in one video</div>
+            <div className="mt-4">
+              <DriveVideoEmbed
+                url="https://drive.google.com/file/d/12U-Bto-POG4kHwGVlWhGAfrh3M8sONVs/view?usp=drive_link"
+                title="Tech Vriksh 2025 year-in-review video"
+              />
             </div>
-            <div className="tv-divider h-px w-full" />
-            <div>
-              <div className="tv-mono text-sm uppercase tracking-[0.24em] text-[color:var(--tv-magenta)]">Flagship hackathon</div>
-              <div className="tv-heading mt-2 text-2xl leading-tight">{flagshipHackathon.title}</div>
-              <p className="mt-2 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{flagshipHackathon.description}</p>
+          </div>
+
+          <div className="tv-card tv-card-cyan rounded-[2rem] p-5 sm:p-6">
+            <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">At a glance</div>
+            <div className="mt-5 space-y-4 border-l border-white/10 pl-4 sm:pl-5">
+              <div>
+                <div className="tv-mono text-sm uppercase tracking-[0.24em] text-[color:var(--tv-cyan)]">{featuredStatusLabel}</div>
+                <div className="tv-heading mt-2 text-2xl leading-tight">{highlightEvent.title}</div>
+                <p className="mt-2 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{highlightEvent.description}</p>
+              </div>
+              <div className="tv-divider h-px w-full" />
+              <div>
+                <div className="tv-mono text-sm uppercase tracking-[0.24em] text-[color:var(--tv-magenta)]">Flagship hackathon</div>
+                <div className="tv-heading mt-2 text-2xl leading-tight">{flagshipHackathon.title}</div>
+                <p className="mt-2 text-sm leading-6 text-[color:var(--tv-text-secondary)]">{flagshipHackathon.description}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* 2025 recap — the year-in-review video, sitting right under the hero */}
-      <Reveal className="mt-10">
-        <div className="tv-card rounded-[1.8rem] p-6 sm:p-7">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">2025 recap</div>
-              <h2 className="tv-heading mt-2 text-3xl tracking-[-0.04em]">A year of Tech Vriksh, in one video</h2>
-            </div>
-          </div>
-          <div className="mt-6 mx-auto max-w-3xl">
-            <DriveVideoEmbed
-              url="https://drive.google.com/file/d/12U-Bto-POG4kHwGVlWhGAfrh3M8sONVs/view?usp=drive_link"
-              title="Tech Vriksh 2025 year-in-review video"
-            />
-          </div>
-        </div>
-      </Reveal>
 
       {/* Stats — each card fades in on its own beat instead of all at once */}
       <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -154,60 +175,6 @@ export default function HomePage() {
           <StatCard label="Team shape" value="8 to 19 across 7 departments" />
         </Reveal>
       </div>
-
-      {/* Highlight event — its own section now, no longer sharing space with the gallery */}
-      <Reveal className="mt-14">
-        <div className="tv-card rounded-[1.8rem] p-6 sm:p-7">
-          <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">
-            {hasUpcoming ? 'Upcoming event' : 'Event recap'}
-          </div>
-          <div className="mt-3 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div>
-              <h2 className="tv-heading text-3xl tracking-[-0.04em]">{highlightEvent.title}</h2>
-              <div className="mt-4 flex flex-wrap gap-2 text-xs text-[color:var(--tv-text-secondary)]">
-                <span className="tv-tag rounded-full px-3 py-1 tv-mono uppercase tracking-[0.2em]">{highlightEvent.subtitle}</span>
-                <span className="tv-tag rounded-full px-3 py-1 tv-mono uppercase tracking-[0.2em]">{highlightEvent.format}</span>
-                <span className="tv-tag rounded-full px-3 py-1 tv-mono uppercase tracking-[0.2em]">{highlightEvent.status}</span>
-              </div>
-              <p className="mt-4 max-w-xl text-sm leading-7 text-[color:var(--tv-text-secondary)]">{highlightEvent.description}</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {hasUpcoming ? (
-                  <a
-                    href={highlightEvent.registrationUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="tv-button tv-button-primary rounded-full px-5 py-3 text-sm font-medium text-[color:var(--tv-text-primary)]"
-                  >
-                    Register
-                  </a>
-                ) : (
-                  <a
-                    href={highlightEvent.registrationUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="tv-button rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-[color:var(--tv-text-primary)] hover:border-[color:var(--tv-cyan)]/40 hover:text-[color:var(--tv-cyan)]"
-                  >
-                    View recap
-                  </a>
-                )}
-                <Link href="/events" className="tv-button rounded-full border border-white/10 px-5 py-3 text-sm font-medium hover:text-[color:var(--tv-cyan)]">
-                  See all events
-                </Link>
-              </div>
-              <div className="mt-5 text-xs leading-6 text-[color:var(--tv-text-secondary)]">
-                {highlightEvent.notes?.map((note) => (
-                  <div key={note} className="tv-mono">
-                    {note}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-[1.4rem] border border-white/10">
-              <Image src={highlightEvent.image} alt={highlightEvent.title} width={1200} height={800} className="h-full w-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </Reveal>
 
       {/* Speakers — new. Real names only, grows as more sessions happen. */}
       <Reveal className="mt-14">
@@ -234,10 +201,12 @@ export default function HomePage() {
         <div className="tv-card rounded-[1.5rem] p-5 sm:p-6">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <div className="tv-mono text-xs uppercase tracking-[0.3em] text-[color:var(--tv-text-secondary)]">Community photos</div>
-              <h3 className="tv-heading mt-2 text-2xl tracking-[-0.04em]">Sample event moments and team frames</h3>
+              <div className="tv-mono text-xs uppercase tracking-[0.3em] text-[color:var(--tv-text-secondary)]">Community</div>
+              <h3 className="tv-heading mt-2 text-2xl tracking-[-0.04em]">What our sessions actually look like</h3>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-[color:var(--tv-text-secondary)]">
+                Real photos from live workshops and meetups — the people, the rooms, the work in progress.
+              </p>
             </div>
-            <div className="tv-mono text-xs uppercase tracking-[0.24em] text-[color:var(--tv-cyan)]">Photo-style sample layout</div>
           </div>
           <div className="mt-4 grid gap-3 md:grid-cols-12">
             {communityGalleryPhotos.map((src, index) => {
@@ -250,39 +219,15 @@ export default function HomePage() {
                 >
                   <Image
                     src={src}
-                    alt={`Community sample ${index + 1}`}
+                    alt="Tech Vriksh community session"
                     width={1200}
                     height={900}
                     className={`w-full object-cover transition duration-500 group-hover:scale-[1.03] ${isFeatured ? 'aspect-[4/3] md:aspect-[11/8] md:h-full' : 'aspect-[4/3]'}`}
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent p-3">
-                    <div className="tv-mono text-[0.68rem] uppercase tracking-[0.24em] text-[color:var(--tv-text-secondary)]">Sample frame {index + 1}</div>
-                  </div>
                 </div>
               );
             })}
           </div>
-        </div>
-      </Reveal>
-
-      {/* Hackathon spotlight + credibility — compact side-by-side, kept short on purpose */}
-      <Reveal className="mt-14 grid gap-4 sm:grid-cols-2">
-        <div className="tv-card rounded-[1.5rem] p-5 sm:p-6">
-          <div className="tv-mono text-xs uppercase tracking-[0.3em] text-[color:var(--tv-magenta)]">Hackathon spotlight</div>
-          <h3 className="tv-heading mt-3 text-2xl">HackVriksh</h3>
-          <p className="mt-3 text-sm leading-7 text-[color:var(--tv-text-secondary)]">
-            The flagship hackathon page is kept intentionally flexible for sponsor, track, and prize updates.
-          </p>
-          <Link className="mt-5 inline-flex text-sm text-[color:var(--tv-cyan)]" href="/hackathons/hackvriksh-code-create-cultivate">
-            Open detail page
-          </Link>
-        </div>
-        <div className="tv-card rounded-[1.5rem] p-5 sm:p-6">
-          <div className="tv-mono text-xs uppercase tracking-[0.3em] text-[color:var(--tv-cyan)]">Credibility note</div>
-          <h3 className="tv-heading mt-3 text-2xl">Hosted at Microsoft, ThoughtWorks & OpsTree Global</h3>
-          <p className="mt-3 text-sm leading-7 text-[color:var(--tv-text-secondary)]">
-            That venue history is shown as plain text, not a logo strip, so the site stays factual instead of looking templated.
-          </p>
         </div>
       </Reveal>
 
