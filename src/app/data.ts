@@ -57,6 +57,7 @@ export type Speaker = {
   role: string;
   topic: string;
   event: string;
+  image?: string;
 };
 
 // Real speakers only — add here as more sessions happen. Photos/LinkedIn can be added once available.
