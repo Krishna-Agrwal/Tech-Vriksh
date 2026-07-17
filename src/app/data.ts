@@ -52,6 +52,36 @@ export type TeamDepartment = {
   members: TeamMember[];
 };
 
+export type StateMemberCount = {
+  state: string;
+  count: number;
+  lat: number;
+  lng: number;
+};
+
+// Derived from the raw college/institution list — names normalized, near-duplicate spellings merged,
+// mapped to states, then doubled per the agreed methodology.
+export const stateMembers: StateMemberCount[] = [
+  { state: 'Uttar Pradesh', count: 444, lat: 26.8467, lng: 80.9462 },
+  { state: 'Delhi', count: 194, lat: 28.7041, lng: 77.1025 },
+  { state: 'Haryana', count: 112, lat: 29.0588, lng: 76.0856 },
+  { state: 'Punjab', count: 52, lat: 31.1471, lng: 75.3412 },
+  { state: 'Maharashtra', count: 32, lat: 19.7515, lng: 75.7139 },
+  { state: 'Telangana', count: 32, lat: 18.1124, lng: 79.0193 },
+  { state: 'Tamil Nadu', count: 28, lat: 11.1271, lng: 78.6569 },
+  { state: 'Gujarat', count: 24, lat: 22.2587, lng: 71.1924 },
+  { state: 'Karnataka', count: 20, lat: 15.3173, lng: 75.7139 },
+  { state: 'Uttarakhand', count: 10, lat: 30.0668, lng: 79.0193 },
+  { state: 'Rajasthan', count: 10, lat: 27.0238, lng: 74.2179 },
+  { state: 'West Bengal', count: 10, lat: 22.9868, lng: 87.855 },
+  { state: 'Andhra Pradesh', count: 6, lat: 15.9129, lng: 79.74 },
+  { state: 'Madhya Pradesh', count: 6, lat: 22.9734, lng: 78.6569 },
+  { state: 'Odisha', count: 4, lat: 20.9517, lng: 85.0985 },
+  { state: 'Manipur', count: 2, lat: 24.6637, lng: 93.9063 },
+  { state: 'Bihar', count: 2, lat: 25.0961, lng: 85.3131 },
+  { state: 'Jharkhand', count: 2, lat: 23.6102, lng: 85.2799 }
+];
+
 export type Speaker = {
   name: string;
   role: string;
