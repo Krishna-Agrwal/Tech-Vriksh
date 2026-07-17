@@ -1,20 +1,11 @@
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
 import { Counter } from '@/components/counter';
 import { ParallaxLayer } from '@/components/parallax-layer';
 import { DriveVideoEmbed } from '@/components/drive-video-embed';
+import { IndiaMapLoader } from '@/components/india-map-loader';
 import { communityGalleryPhotos, events, hackathons, speakers, stateMembers, type Speaker } from './data';
-
-const IndiaMap = dynamic(() => import('@/components/india-map').then((mod) => mod.IndiaMap), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-[460px] w-full items-center justify-center rounded-[1.4rem] border border-white/10 bg-white/5">
-      <span className="tv-mono text-xs uppercase tracking-[0.24em] text-[color:var(--tv-text-secondary)]">Loading map…</span>
-    </div>
-  )
-});
 
 function getUpcomingEvent() {
   return events.find((event) => event.status === 'upcoming');
@@ -195,7 +186,7 @@ export default function HomePage() {
             {stateMembers.length} states and counting — hover a marker to see the count for that state.
           </p>
           <div className="mt-6">
-            <IndiaMap data={stateMembers} />
+            <IndiaMapLoader data={stateMembers} />
           </div>
         </div>
       </Reveal>
