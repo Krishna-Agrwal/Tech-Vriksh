@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
 import { Counter } from '@/components/counter';
 import { ParallaxLayer } from '@/components/parallax-layer';
-import { InstagramEmbed } from '@/components/instagram-embed';
+import { DriveVideoEmbed } from '@/components/drive-video-embed';
 import { communityGalleryPhotos, events, hackathons, speakers, type Speaker } from './data';
 
 function getUpcomingEvent() {
@@ -120,6 +120,24 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 2025 recap — the year-in-review video, sitting right under the hero */}
+      <Reveal className="mt-10">
+        <div className="tv-card rounded-[1.8rem] p-6 sm:p-7">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">2025 recap</div>
+              <h2 className="tv-heading mt-2 text-3xl tracking-[-0.04em]">A year of Tech Vriksh, in one video</h2>
+            </div>
+          </div>
+          <div className="mt-6 mx-auto max-w-3xl">
+            <DriveVideoEmbed
+              url="https://drive.google.com/file/d/12U-Bto-POG4kHwGVlWhGAfrh3M8sONVs/view?usp=drive_link"
+              title="Tech Vriksh 2025 year-in-review video"
+            />
+          </div>
+        </div>
+      </Reveal>
 
       {/* Stats — each card fades in on its own beat instead of all at once */}
       <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -243,21 +261,6 @@ export default function HomePage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </Reveal>
-
-      {/* 2025 recap — the year-in-review video, pulled straight from Instagram */}
-      <Reveal className="mt-14">
-        <div className="tv-card rounded-[1.8rem] p-6 sm:p-7">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <div className="tv-mono text-xs uppercase tracking-[0.32em] text-[color:var(--tv-text-secondary)]">2025 recap</div>
-              <h2 className="tv-heading mt-2 text-3xl tracking-[-0.04em]">A year of Tech Vriksh, in one video</h2>
-            </div>
-          </div>
-          <div className="mt-6 flex justify-center">
-            <InstagramEmbed url="https://www.instagram.com/p/DS6c5UpEkm_/" caption="Tech Vriksh 2025 year-in-review video" />
           </div>
         </div>
       </Reveal>
