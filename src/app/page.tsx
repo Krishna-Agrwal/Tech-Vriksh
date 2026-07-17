@@ -136,7 +136,7 @@ export default function HomePage() {
             <div className="tv-heading mt-2 text-xl leading-tight">A year of Tech Vriksh, in one video</div>
             <div className="mt-4">
               <DriveVideoEmbed
-                url="https://drive.google.com/file/d/12U-Bto-POG4kHwGVlWhGAfrh3M8sONVs/view?usp=drive_link"
+                url="https://drive.google.com/file/d/1JWtB2j04oCn8ErjhcTMcHRrq2mwOA6-A/view?usp=drive_link"
                 title="Tech Vriksh 2025 year-in-review video"
               />
             </div>
